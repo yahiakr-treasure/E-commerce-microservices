@@ -13,14 +13,15 @@ services:
   users-microservice:
     image: yahiakr/ecommerce-users-microservice
     environment:
-      POSTGRESS_USERNAME: $POSTGRESS_USERNAME
-      POSTGRESS_PASSWORD: $POSTGRESS_PASSWORD
-      POSTGRESS_DB: $POSTGRESS_DB
-      POSTGRESS_HOST: $POSTGRESS_HOST 
-      AWS_REGION: $AWS_REGION 
-      AWS_PROFILE: $AWS_PROFILE
-      AWS_BUCKET: $AWS_BUCKET
-      JWT_SECRET: $JWT_SECRET
+      POSTGRESS_USERNAME: yahiakr
+      POSTGRESS_PASSWORD: kyrahwk96
+      POSTGRESS_DB: ecommerce
+      POSTGRESS_HOST: ecommerceapp.c4pbzcso1lag.us-east-1.rds.amazonaws.com
+      dialect: postgres
+      AWS_REGION: us-east-1
+      AWS_PROFILE: default
+      AWS_BUCKET: ecommerce-app-yahiakr
+      JWT_SECRET: hakoona-matata
       URL: "http://localhost:8100"
 
   products-microservice:
@@ -28,14 +29,15 @@ services:
     volumes:
       - $HOME/.aws:/root/.aws
     environment:
-      POSTGRESS_USERNAME: $POSTGRESS_USERNAME
-      POSTGRESS_PASSWORD: $POSTGRESS_PASSWORD 
-      POSTGRESS_DB: $POSTGRESS_DB 
-      POSTGRESS_HOST: $POSTGRESS_HOST 
-      AWS_REGION: $AWS_REGION 
-      AWS_PROFILE: $AWS_PROFILE 
-      AWS_BUCKET: $AWS_BUCKET
-      JWT_SECRET: $JWT_SECRET
+      POSTGRESS_USERNAME: yahiakr
+      POSTGRESS_PASSWORD: kyrahwk96
+      POSTGRESS_DB: ecommerce
+      POSTGRESS_HOST: ecommerceapp.c4pbzcso1lag.us-east-1.rds.amazonaws.com
+      dialect: postgres
+      AWS_REGION: us-east-1
+      AWS_PROFILE: default
+      AWS_BUCKET: ecommerce-app-yahiakr
+      JWT_SECRET: hakoona-matata
       URL: "http://localhost:8100"
 
   orders-microservice:
@@ -43,12 +45,13 @@ services:
     volumes:
       - $HOME/.aws:/root/.aws
     environment:
-      POSTGRESS_USERNAME: $POSTGRESS_USERNAME
-      POSTGRESS_PASSWORD: $POSTGRESS_PASSWORD 
-      POSTGRESS_DB: $POSTGRESS_DB 
-      POSTGRESS_HOST: $POSTGRESS_HOST 
-      AWS_REGION: $AWS_REGION 
-      AWS_PROFILE: $AWS_PROFILE 
-      AWS_BUCKET: $AWS_BUCKET
-      JWT_SECRET: $JWT_SECRET
+      POSTGRESS_USERNAME: yahiakr
+      POSTGRESS_PASSWORD: kyrahwk96
+      POSTGRESS_DB: ecommerce
+      POSTGRESS_HOST: ecommerceapp.c4pbzcso1lag.us-east-1.rds.amazonaws.com
+      dialect: postgres
+      AWS_REGION: us-east-1
+      AWS_PROFILE: default
+      AWS_BUCKET: ecommerce-app-yahiakr
+      JWT_SECRET: hakoona-matata
       URL: "http://localhost:8100"

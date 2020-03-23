@@ -47,7 +47,7 @@ router.get('/:id',
 
 // update a specific resource
 router.patch('/:id', 
-    requireAuth, 
+    requireAuth,
     async (req: Request, res: Response) => {
         
     let { id } = req.params;
@@ -59,6 +59,17 @@ router.patch('/:id',
     const saved_order = await order.save();
 
     res.status(201).send(saved_order);
+});
+
+// Delete a specific resource
+router.delete('/:id',
+    requireAuth,
+    async (req: Request, res: Response) => {
+    let { id } = req.params;
+    const order = await Order.findByPk(id);
+
+    order.destroy()
+    res.status(201).send();
 });
 
 
