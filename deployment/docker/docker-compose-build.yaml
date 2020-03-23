@@ -1,0 +1,22 @@
+version: "3"
+services:
+  reverseproxy:
+    build:
+      context: .
+    image: yahiakr/ecommerce-reverseproxy
+
+  users-microservice:
+    build:
+      context: ../../users-microservice
+    image: yahiakr/ecommerce-users-microservice
+
+
+  products-microservice:
+    build:
+      context: ../../products-microservice
+    image: yahiakr/ecommerce-products-microservice
+
+  orders-microservice:
+    build:
+      context: ../../orders-microservice
+    image: yahiakr/ecommerce-orders-microservice
