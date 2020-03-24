@@ -62,6 +62,17 @@ router.patch('/:id',
         res.status(201).send(saved_item);
 });
 
+// Delete a specific resource
+router.delete('/:id',
+    requireAuth,
+    async (req: Request, res: Response) => {
+    let { id } = req.params;
+    const order = await FeedItem.findByPk(id);
+
+    order.destroy()
+    res.status(201).send();
+});
+
 
 // Get a signed url to put a new item in the bucket
 router.get('/signed-url/:fileName',

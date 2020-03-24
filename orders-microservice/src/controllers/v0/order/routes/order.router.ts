@@ -74,8 +74,7 @@ router.delete('/:id',
 
 
 // body : {item: string, client: string};
-router.post('/', 
-    requireAuth,
+router.post('/',
     async (req: Request, res: Response) => {
     const item = req.body.item;
     const client = req.body.client;

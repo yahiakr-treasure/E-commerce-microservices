@@ -55,3 +55,13 @@ services:
       AWS_BUCKET: ecommerce-app-yahiakr
       JWT_SECRET: hakoona-matata
       URL: "http://localhost:8100"
+
+  admin-frontend:
+    image: yahiakr/ecommerce-admin-frontend
+    ports:
+      - "8100:80"
+
+  client-frontend:
+    image: yahiakr/ecommerce-client-frontend
+    ports:
+      - "8888:80"
