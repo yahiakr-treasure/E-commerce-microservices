@@ -64,4 +64,4 @@ services:
   client-frontend:
     image: yahiakr/ecommerce-client-frontend
     ports:
-      - "8888:80"
+      - "8000:80"
