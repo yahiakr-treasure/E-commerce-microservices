@@ -13,6 +13,7 @@ export class ProductsComponent implements OnInit {
 
   products = []
   file : File;
+  fileName: string = "Choose an image"
   name: string
   quantity: number
 
@@ -21,7 +22,8 @@ export class ProductsComponent implements OnInit {
   }
 
   onFileChanged(event) {
-    this.file = event.target.files[0]  
+    this.file = event.target.files[0]
+    this.fileName = this.file.name
   }
 
   get_products(){
@@ -67,13 +69,12 @@ export class ProductsComponent implements OnInit {
     .pipe(first()).subscribe(
       res => {
         console.log(res);
+        this.products.push(res)
       },
       err => {
         console.log("Error occured : "+ err);
       }
     );
-
-    this.get_products()
   }
 
 }

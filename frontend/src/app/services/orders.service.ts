@@ -29,7 +29,7 @@ export class OrdersService {
       state : state
     };
 
-    return this.http.patch<any>(this.ROOT_URL+'/orders/:'+id+'?',body,{ headers: headers })
+    return this.http.patch<any>(this.ROOT_URL+'/orders/'+id,body,{ headers: headers })
     .pipe(map(res => {
       return res;
     }));
