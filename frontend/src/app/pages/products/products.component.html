@@ -9,53 +9,72 @@
   <div class="container-fluid mt--7">
     <!-- Table -->
     <div class="row">
-      <div class="col">
-        <div class="card shadow">
-          <div class="card-header border-0">
-            <h3 class="mb-0">Products</h3>
-          </div>
-          <div class="table-responsive">
-            <table class="table align-items-center table-flush">
-              <thead class="thead-light">
-                <tr>
-                  <th scope="col">Product</th>
-                  <th scope="col">Price</th>
-                  <th scope="col">Stock</th>                
-                  <th scope="col"></th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row">
-                    <div class="media align-items-center">
-                      <a href="javascript:void(0)" class="avatar rounded-circle mr-3">
-                        <img alt="Image placeholder" src="../assets/img/theme/team-1-800x800.jpg">
-                      </a>
-                      <div class="media-body">
-                        <span class="mb-0 text-sm">Argon Design System</span>
+      <div class="col-md-4">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">Add product</h4>
+            </div>
+            <div class="card-body">
+                <label for="productname">Product name</label>
+                <input class="form-control" [(ngModel)]="name" id="productname" type="text" placeholder="Enter product name">
+                <br>
+                <label for="Quantity">Quantity</label>
+                <input class="form-control" [(ngModel)]="quantity" id="Quantity" type="text" placeholder="Enter Quantity">
+                <br>
+                <label for="image">Product image</label>
+                <div class="input-group">
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="inputGroupFile01"
+                        aria-describedby="inputGroupFileAddon01" (change)="onFileChanged($event)">
+                        <label class="custom-file-label" for="inputGroupFile01">Choose image</label>
+                    </div>
+                </div>
+                <br>
+                <button type="button" class="btn btn-primary float-right" (click)="add_product()">Add</button>
+            </div>
+        </div>
+      </div>
+
+      <div class="col-md-8">
+        <div class="col">
+          <div class="card shadow">
+            <div class="card-header border-0">
+              <h3 class="mb-0">Products</h3>
+            </div>
+            <div class="table-responsive">
+              <table class="table align-items-center table-flush">
+                <thead class="thead-light">
+                  <tr>
+                    <th scope="col">Product</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Stock</th>                
+                    <th scope="col"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let item of products">
+                    <th scope="row">
+                      <div class="media align-items-center">
+                        <a href="javascript:void(0)" class="avatar rounded-circle mr-3">
+                          <img alt="Image placeholder" [src]=item.url>
+                        </a>
+                        <div class="media-body">
+                          <span class="mb-0 text-sm">{{item.name}}</span>
+                        </div>
                       </div>
-                    </div>
-                  </th>
-                  <td>
-                    $2,500 USD
-                  </td>
-                  <td>
-                    5 articles
-                  </td>
-                  <td class="text-right">
-                    <div class="btn-group" role="group" aria-label="Basic example">
-                      <button type="button" class="btn btn-success"><i class="ni ni-check-bold text-white"></i></button>
-                      <button type="button" class="btn btn-danger"><i class="ni ni-fat-remove text-white"></i></button>
-                      <button type="button" class="btn btn-warning"><i class="ni ni-send text-white"></i></button>
-                    </div>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="card-footer py-4">
-            <button type="button" class="btn btn-primary float-right"
-            data-toggle="modal" data-target="#productModal">Add product</button>
+                    </th>
+                    <td>
+                      $500 USD
+                    </td>
+                    <td>
+                      {{item.quantity}} articles
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="card-footer py-4">
+            </div>
           </div>
         </div>
       </div>
