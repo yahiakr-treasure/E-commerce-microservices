@@ -20,3 +20,13 @@ services:
     build:
       context: ../../orders-microservice
     image: yahiakr/ecommerce-orders-microservice
+  
+  admin-frontend:
+    build:
+      context: ../../admin-frontend
+    image: yahiakr/ecommerce-admin-frontend
+
+  client-frontend:
+    build:
+      context: ../../client-frontend
+    image: yahiakr/ecommerce-client-frontend

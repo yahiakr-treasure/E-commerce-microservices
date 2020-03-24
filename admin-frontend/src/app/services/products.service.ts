@@ -19,6 +19,14 @@ export class ProductsService {
     }));
   }
 
+  public delete_product(id: string){
+    const headers = new HttpHeaders({'Authorization':localStorage.getItem('accesToken')});
+    return this.http.delete<any>(this.ROOT_URL+'/feed/'+id,{ headers: headers })
+    .pipe(map(res => {
+      return res;
+    }));
+  }
+
   public update_product(id:string, quantity:number){
 
     const headers = new HttpHeaders({'Authorization':localStorage.getItem('accesToken')});

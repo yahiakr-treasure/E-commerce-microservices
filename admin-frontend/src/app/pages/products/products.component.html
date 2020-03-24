@@ -69,6 +69,11 @@
                     <td>
                       {{item.quantity}} articles
                     </td>
+                    <td class="text-right">
+                      <div class="btn-group" role="group" aria-label="Basic example">
+                          <button type="button" class="btn btn-danger" (click)="delete_ptoduct(item.id)"><i class="ni ni-fat-remove text-white"></i></button>
+                      </div>
+                    </td>
                   </tr>
                 </tbody>
               </table>

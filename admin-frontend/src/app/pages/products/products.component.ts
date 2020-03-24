@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductsService } from '../../services/products.service'
 import { first } from 'rxjs/operators';
+import { element } from 'protractor';
 
 @Component({
   selector: 'app-products',
@@ -35,6 +36,20 @@ export class ProductsComponent implements OnInit {
         }
         console.log(this.products[0]);
         
+      },
+      err => {
+        console.log("Error occured : "+ err);
+      }
+    );
+  }
+
+  delete_ptoduct(id){
+    this.service.delete_product(id)
+    .pipe(first()).subscribe(
+      res => {
+        console.log(res);
+        let index = this.products.indexOf(this.products.find(element => element.id == id))
+        this.products.splice(index, 1);
       },
       err => {
         console.log("Error occured : "+ err);

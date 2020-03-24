@@ -39,10 +39,12 @@ export class OrdersComponent implements OnInit {
             
             for (const key in order_tmp) {
               let element = prods.find(element => element.id == order_tmp[key].item);
-              order_tmp[key].item = element.name
-              order_tmp[key].image = element.url
-              if(order_tmp[key].state == null) order_tmp[key].state = "pending"
-              this.orders.push(order_tmp[key])
+              if(element != undefined){
+                order_tmp[key].item = element.name
+                order_tmp[key].image = element.url
+                if(order_tmp[key].state == null) order_tmp[key].state = "pending"
+                this.orders.push(order_tmp[key])
+              }
             }
             
           },

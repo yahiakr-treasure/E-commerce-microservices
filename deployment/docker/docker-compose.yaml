@@ -14,7 +14,7 @@ services:
     image: yahiakr/ecommerce-users-microservice
     environment:
       POSTGRESS_USERNAME: yahiakr
-      POSTGRESS_PASSWORD: kyrahwk96
+      POSTGRESS_PASSWORD: 123456789
       POSTGRESS_DB: ecommerce
       POSTGRESS_HOST: ecommerceapp.c4pbzcso1lag.us-east-1.rds.amazonaws.com
       dialect: postgres
@@ -30,7 +30,7 @@ services:
       - $HOME/.aws:/root/.aws
     environment:
       POSTGRESS_USERNAME: yahiakr
-      POSTGRESS_PASSWORD: kyrahwk96
+      POSTGRESS_PASSWORD: 123456789
       POSTGRESS_DB: ecommerce
       POSTGRESS_HOST: ecommerceapp.c4pbzcso1lag.us-east-1.rds.amazonaws.com
       dialect: postgres
@@ -46,7 +46,7 @@ services:
       - $HOME/.aws:/root/.aws
     environment:
       POSTGRESS_USERNAME: yahiakr
-      POSTGRESS_PASSWORD: kyrahwk96
+      POSTGRESS_PASSWORD: 123456789
       POSTGRESS_DB: ecommerce
       POSTGRESS_HOST: ecommerceapp.c4pbzcso1lag.us-east-1.rds.amazonaws.com
       dialect: postgres
