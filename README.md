@@ -27,6 +27,7 @@ PS: I could not share the images on Docker Hub because of my slow internet.
 In order to deploy the application to to a Kubernetes cluster, we can fellow the steps mentioned here : [yahiakr/Udagram_microservices](https://github.com/yahiakr/Udagram_microservices).
 
 # Other informations:
+* You can acces the dashboard from : [http://localhost:8100/](http://localhost:8100/), & the client app from: [http://localhost:8000/](http://localhost:8000/).
 *	You can test the services using postman collections. (each service has it's own postman collection in it's root folder).
 *	postman collections contain tests.
 * To login to the dashboard use the following credentials : email: admin@gmail.com, password: admin.
