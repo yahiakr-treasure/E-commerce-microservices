@@ -2,7 +2,7 @@
 
 This is a simple cloud application developed alongside the Udacity Cloud Engineering Nanodegree.
 
-**Users type :** There are two type of users: admin, & client.
+**Users type :** There are two types of users: admin, & client.
 
 **Use cases :** It allows:
 * Admins: to login, list the products, create & delete a product. List the client orders, and accept or reject an order.
