@@ -10,7 +10,7 @@ This is a simple cloud application developed alongside the Udacity Cloud Enginee
 
 # Global architecture 
 
-![alt text](./images/Architecture.jpg)
+![alt text](./screenshots/Architecture.jpg)
 
 ### Create Docker Images and run it locally
 * Build the images:
@@ -21,8 +21,41 @@ docker-compose -f docker-compose-build.yaml build --parallel
 ```
 docker-compose up
 ```
+* to share those images through the Docker Hub:
+```
+docker-compose -f docker-compose-build.yaml push
+```
 PS: I could not share the images on Docker Hub because of my slow internet.
-In order to deploy the application to to a Kubernetes cluster, we can fellow the steps mentioned here : [yahiakr/Udagram_microservices](https://github.com/yahiakr/Udagram_microservices).
+I only shared the [yahiakr/ecommerce-reverseproxy](https://hub.docker.com/r/yahiakr/ecommerce-reverseproxy) image because it's lightweight.
+
+### Deploy the application to to a kubernetes cluster
+
+1. First we create the infrastructure (kubernetes cluster) using the AWS management console, [This article](https://medium.com/faun/create-your-first-application-on-aws-eks-kubernetes-cluster-874ee9681293) guides you to set up your Kubernetes cluster in AWS EKS.
+
+2. Setup the credentials & secrets:
+```
+kubectl apply -f env-configmap.yaml
+kubectl apply -f aws-secret.yaml
+kubectl apply -f env-secret.yaml
+```
+
+3. Launch the deployments and the services in your Kubernetes cluster as follows:
+```
+kubectl apply -f users-microservice-deployment.yaml
+kubectl apply -f products-microservice-deployment.yaml
+kubectl apply -f orders-microservice-deployment.yaml
+kubectl apply -f admin-frontend-deployment.yaml
+kubectl apply -f client-frontend-deployment.yaml
+kubectl apply -f reverseproxy-deployment.yaml
+
+#Launch the services
+kubectl apply -f users-microservice-service.yaml
+kubectl apply -f products-microservice-service.yaml
+kubectl apply -f orders-microservice-service.yaml
+kubectl apply -f admin-frontend-service.yaml
+kubectl apply -f client-frontend-service.yaml
+kubectl apply -f reverseproxy-service.yaml
+```
 
 # Other informations:
 * You can acces the dashboard from : [http://localhost:8100/](http://localhost:8100/), & the client app from: [http://localhost:8000/](http://localhost:8000/).
