@@ -18,4 +18,8 @@ before_install:
 
 
 install:
+<<<<<<< HEAD
   - docker-compose -f deployment/docker/docker-compose-build.yaml build --parallel
+=======
+  - docker-compose -f deployment/docker/docker-compose-build.yaml build --parallel
+>>>>>>> 3371a25f73ceda98706e74ddf32b89099624fe1c
