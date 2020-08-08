@@ -1,0 +1,23 @@
+.product-image {
+    height: 500px;
+    background-image: url("src/assets/images/item-1.jpg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+.button-circle {
+    height: 26px;
+    width: 26px;
+    background-color: gainsboro;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.color-circle {
+    height: 34px;
+    width: 34px;
+    background-color: gainsboro;
+    border-radius: 50%;
+    display: inline-block;
+}

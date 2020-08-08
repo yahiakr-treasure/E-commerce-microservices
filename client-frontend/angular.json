@@ -3,17 +3,21 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "client-frontend": {
+    "flower-store": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
       "prefix": "app",
-      "schematics": {},
+      "schematics": {
+        "@schematics/angular:component": {
+          "styleext": "scss"
+        }
+      },
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/client-frontend",
+            "outputPath": "dist/flower-store",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -23,8 +27,8 @@
               "src/assets"
             ],
             "styles": [
-              "node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "src/styles.css"
+              "src/styles.scss",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",
@@ -61,18 +65,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "client-frontend:build"
+            "browserTarget": "flower-store:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "client-frontend:build:production"
+              "browserTarget": "flower-store:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "client-frontend:build"
+            "browserTarget": "flower-store:build"
           }
         },
         "test": {
@@ -83,7 +87,7 @@
             "tsConfig": "src/tsconfig.spec.json",
             "karmaConfig": "src/karma.conf.js",
             "styles": [
-              "src/styles.css"
+              "src/styles.scss"
             ],
             "scripts": [],
             "assets": [
@@ -106,7 +110,7 @@
         }
       }
     },
-    "client-frontend-e2e": {
+    "flower-store-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -115,11 +119,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "client-frontend:serve"
+            "devServerTarget": "flower-store:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "client-frontend:serve:production"
+              "devServerTarget": "flower-store:serve:production"
             }
           }
         },
@@ -135,5 +139,5 @@
       }
     }
   },
-  "defaultProject": "client-frontend"
+  "defaultProject": "flower-store"
 }
