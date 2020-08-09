@@ -2,6 +2,11 @@
     height: 200px;
     background-image: url("src/assets/images/item-1.jpg");
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
     background-position: center;
+}
+
+.menu {
+    overflow-x: auto;
+    white-space: nowrap;
 }

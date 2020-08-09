@@ -5,3 +5,26 @@
     border-radius: 50%;
     display: inline-block;
 }
+
+.button-circle {
+    height: 26px;
+    width: 26px;
+    background-color: gainsboro;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.cart-bg {
+    background-image: url("src/assets/images/bg-1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: left;
+}
+
+.item-image {
+    height: 80px;
+    background-image: url("src/assets/images/item-1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}

@@ -2,47 +2,18 @@
 
   <div class="row mt-3">
     <div class="col-12">
-      <h3>{{title}}</h3>
+      <h3>{{this.capitalizeFirstLetter(this.title)}}</h3>
     </div>
   </div>
 
   <div class="row text-center">
-    <div class="col-3 p-0">
-      <div class="w-100 item-image"></div>
-      <p class="m-0">this flower bkala mld</p>
-      <p class="font-weight-bold">13,80€</p>
+
+    <div *ngFor="let product of products" class="col-3" [routerLink]="['/product', product.id]">
+      <div class="w-100 item-image" [ngStyle]="{'background-image': getImageUrl(product.image.url)}"></div>
+      <p class="m-0">{{product.name}}</p>
+      <p class="font-weight-bold">{{product.price}}€</p>
     </div>
-    <div class="col-3 p-0">
-      <div class="w-100 item-image"></div>
-      <p class="m-0">this flower bkala mld</p>
-      <p class="font-weight-bold">13,80€</p>
-    </div>
-    <div class="col-3 p-0">
-      <div class="w-100 item-image"></div>
-      <p class="m-0">this flower bkala mld</p>
-      <p class="font-weight-bold">13,80€</p>
-    </div>
-    <div class="col-3 p-0">
-      <div class="w-100 item-image"></div>
-      <p class="m-0">this flower bkala mld</p>
-      <p class="font-weight-bold">13,80€</p>
-    </div>
-    <div class="col-3 p-0">
-      <div class="w-100 item-image"></div>
-      <p class="m-0">this flower bkala mld</p>
-      <p class="font-weight-bold">13,80€</p>
-    </div>
-    <div class="col-3 p-0">
-      <div class="w-100 item-image"></div>
-      <p class="m-0">this flower bkala mld</p>
-      <p class="font-weight-bold">13,80€</p>
-    </div>
-    <div class="col-3 p-0">
-      <div class="w-100 item-image"></div>
-      <p class="m-0">this flower bkala mld</p>
-      <p class="font-weight-bold">13,80€</p>
-    </div>
-    
+
   </div>
 
   <div class="row text-center mt-5">

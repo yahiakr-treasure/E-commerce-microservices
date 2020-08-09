@@ -2,7 +2,7 @@
   <div class="row mt-5">
 
     <div class="col-6">
-      <div class="w-100 product-image"></div>
+      <div class="w-100 product-image" [ngStyle]="{'background-image': getImageUrl(product.image.url)}"></div>
     </div>
 
     <div class="col-6">
@@ -11,14 +11,14 @@
 
         <div class="row">
           <div class="col-12">
-            <h5>Product name</h5>
+            <h5>{{product.name}}</h5>
           </div>
         </div>
 
         <div class="row">
           <div class="col-12">
-            <h4 class="d-inline mr-3">Price</h4>
-            <p class="d-inline text-muted" style="text-decoration: line-through;">old price</p>
+            <h4 class="d-inline mr-3">{{product.price}}€</h4>
+            <p *ngIf="product.discount" class="d-inline text-muted" style="text-decoration: line-through;">old price</p>
             <hr class="mt-2">
           </div>
         </div>
@@ -28,7 +28,7 @@
             <p>Count: </p>
             <div>
               <span class="button-circle text-center"> - </span>
-              <p class="d-inline mx-4">N</p>
+              <p class="d-inline mx-4">1</p>
               <span class="button-circle text-center"> + </span>
             </div>
           </div>
@@ -48,7 +48,8 @@
 
         <div class="row mt-4">
           <div class="col-6 pr-0">
-            <button class="btn btn-block btn-dark">Add to cart</button>
+            <button class="btn btn-block btn-dark"
+                    (click)="addToCart()">Add to cart</button>
           </div>
           
           <div class="col-6">
@@ -92,4 +93,4 @@
 
 <div style="height: 50px;"></div>
 
-<app-list></app-list>
+<app-list [products]="recomended"></app-list>

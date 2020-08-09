@@ -20,43 +20,27 @@
               </div>
             </div>
 
-            <div class="row">
-              <div class="col-3">
-                <img src="assets/images/item-1.jpg" class="border" height="80" alt="">
+            <div class="row mt-3" *ngFor="let product of cartService.cartProducts">
+              <div class="col-4 pr-0">
+                <div class="item-image" [ngStyle]="{'background-image': getImageUrl(product.image.url)}"></div>
               </div>
 
-              <div class="col-9">
+              <div class="col-6">
                 <div class="row">
                   <div class="col-12">
-                    <p class="d-inline">Name</p>
-                    <p class="d-inline float-right">13,80€</p>
+                    <p class="d-inline">{{product.name}}</p>
                   </div>
                 </div>
-                <div>
+
+                <div class="mt-1">
                   <span class="button-circle text-center"> - </span>
-                  <p class="d-inline mx-4">N</p>
+                  <p class="d-inline mx-4">1</p>
                   <span class="button-circle text-center"> + </span>
                 </div>
               </div>
-            </div>
 
-            <div class="row mt-3">
-              <div class="col-3">
-                <img src="assets/images/item-1.jpg" class="border" height="80" alt="">
-              </div>
-
-              <div class="col-9">
-                <div class="row">
-                  <div class="col-12">
-                    <p class="d-inline">Name</p>
-                    <p class="d-inline float-right">13,80€</p>
-                  </div>
-                </div>
-                <div>
-                  <span class="button-circle text-center"> - </span>
-                  <p class="d-inline mx-4">N</p>
-                  <span class="button-circle text-center"> + </span>
-                </div>
+              <div class="col-2">
+                <p class="d-inline float-right">{{product.price}}€</p>
               </div>
             </div>
 
@@ -73,7 +57,7 @@
               <div class="col-12">
                 <hr class="mb-1">
                 <p class="d-inline">Tax</p>
-                <p class="d-inline float-right mb-0"> 3,50€</p>
+                <p class="d-inline float-right mb-0">{{cartService.tax}}€</p>
               </div>
             </div>
 
@@ -81,7 +65,7 @@
               <div class="col-12">
                 <hr class="mb-1">
                 <p class="d-inline">Total</p>
-                <p class="d-inline float-right"> 23,50€</p>
+                <p class="d-inline float-right"> {{cartService.totalPrice()}}€</p>
               </div>
             </div>
 

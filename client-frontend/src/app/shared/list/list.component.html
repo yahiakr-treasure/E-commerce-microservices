@@ -3,7 +3,7 @@
   <div class="row">
     <div class="col-12">
       <div class="d-inline-block">
-        <h4>New</h4>
+        <h4>{{title}}</h4>
       </div>
       <div class="d-inline-block float-right">
         <i class="ti ti-arrow-left mr-3"></i>
@@ -12,26 +12,11 @@
     </div>
   </div>
 
-  <div class="row text-center font-weight-bold">
-    <div class="col-3 p-0">
-      <div class="w-100 item-image"></div>
-      <p class="m-0">this flower bkala mld</p>
-      <p>13,80€</p>
-    </div>
-    <div class="col-3 p-0">
-      <div class="w-100 item-image"></div>
-      <p class="m-0">this flower bkala mld</p>
-      <p>13,80€</p>
-    </div>
-    <div class="col-3 p-0">
-      <div class="w-100 item-image"></div>
-      <p class="m-0">this flower bkala mld</p>
-      <p>13,80€</p>
-    </div>
-    <div class="col-3 p-0">
-      <div class="w-100 item-image"></div>
-      <p class="m-0">this flower bkala mld</p>
-      <p>13,80€</p>
+  <div class="row text-center font-weight-bold menu">
+    <div *ngFor="let product of products" class="col-3" [routerLink]="['/product', product.id]">
+      <div class="w-100 item-image" [ngStyle]="{'background-image': getImageUrl(product.image.url)}"></div>
+      <p class="m-0">{{product.name}}</p>
+      <p class="font-weight-bold">{{product.price}}€</p>
     </div>
     
   </div>
