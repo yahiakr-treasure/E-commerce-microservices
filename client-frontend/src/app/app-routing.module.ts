@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './layouts/home/home.component';
 import { ProductComponent } from './layouts/product/product.component';
 import { CatalogComponent } from './layouts/catalog/catalog.component';
+import { CheckoutComponent } from './layouts/checkout/checkout.component';
 
 const routes: Routes =[
   {
@@ -16,6 +17,10 @@ const routes: Routes =[
   {
     path: 'catalog/:type',
     component: CatalogComponent,
+  },
+  {
+    path: 'checkout',
+    component: CheckoutComponent,
   },
   {
     path: '**',

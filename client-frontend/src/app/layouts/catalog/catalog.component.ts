@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-catalog',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CatalogComponent implements OnInit {
 
-  constructor() { }
+  title: string;
+
+  constructor(private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
+    this.activatedRoute.params.subscribe(params => {
+      this.title = this.capitalizeFirstLetter(params['type']);
+    });
+  }
+
+  capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
   }
 
 }
