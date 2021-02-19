@@ -1,5 +1,7 @@
 # Ecommerce microservices
 
+![alt text](./screenshots/Flower-store.png)
+
 This is a simple cloud application developed alongside the Udacity Cloud Engineering Nanodegree.
 
 **Users type :** There are two types of users: admin, & client.
